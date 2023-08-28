@@ -1,0 +1,41 @@
+{
+  "manifestVersion": 1,
+  "id": "vsts-publish-extension",
+  "publisher": "EcpDevOpsTest",
+  "name": "Publish Results Extension",
+  "version": "0.0.1",
+  "description": "This extension publish results generated on previous Test in Azure DevOps pipeline",
+  "icons": {
+    "default": "images/icon.png"
+  },
+  "public": false,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "scopes": [
+    "vso.build_execute",
+    "vso.release_execute"
+  ],
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "files": [
+    {
+      "path": "releaseTask"
+    }
+   ],
+  "contributions": [
+    {
+      "id": "publish-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "releaseTask"
+      }
+    }
+  ]
+}

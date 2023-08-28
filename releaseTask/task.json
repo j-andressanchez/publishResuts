@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "667635ee-f08f-4dac-84da-44ed61e1da65",
+  "name": "PublishTestResults",
+  "friendlyName": "Publish Test Results",
+  "description": "Publica resultados de pruebas de un pipeline en Azure Devops",
+  "helpMarkDown": "Esta extensión permite la publicación de resultados de una ejecución previa en un pipeline de Azure DevOps",
+  "category": "Azure Pipelines",
+  "author": "Jhon Andrés Sánchez",
+  "version": {
+    "Major": 0,
+    "Minor": 0,
+    "Patch": 1
+  },
+  "visibility": [
+    "Release"
+  ],
+  "demands": [
+    "node.js"
+  ],
+  "inputs": [
+    {
+      "name": "TestCaseID",
+      "type": "string",
+      "label": "Test Case ID",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Escriba el ID del TestCase en donde se quiere publicar la evidencia de resultados"
+    }
+  ],
+  "execution": {
+    "Node16": {
+      "target": "index.js"
+    }
+  }
+}
